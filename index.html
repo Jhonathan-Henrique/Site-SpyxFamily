@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="style.css">
+    <title>Spy x Family</title>
+</head>
+<body>
+    <div class="container-geral">
+    <header>
+        <div class="container">
+            <h1>Spy x Family</h1>
+            <div class="menu-hamburguer">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+            <nav>
+                <div class="container">
+                    <ul>
+                        <li><a href="#">Anya Forger</a></li>
+                        <li><a href="#">Loid Forger</a></li>
+                        <li><a href="#">Yor Forger</a></li>
+                    </ul>
+                 </div>
+            </nav>
+    </header>
+    
+    <div id="carrosel">
+        <img src="./images/wallpaperflare.com_wallpaper.jpg" alt="imagem da anya">
+        <img src="./images/loid_forger_hd_spy_x_family-2560x1440.jpg" alt="imagem do loid">
+        <img src="./images/yor-forger-spy-x-family-art-2k-wallpaper-uhdpaper.com-364@0@g.jpg" alt="imagem da yor">
+    </div>
+    <section>
+        <h2>Qual seu personagem predileto?</h2>
+        <div class="container-personagens">
+            <ul>
+                <li>
+                    <h3>Anya Forger</h3>
+                    <img src="./images/Anya_Forger_Anime_png.png" alt="anya forger">
+                    <p>Anya Forger é uma jovem adorável e inteligente com habilidades surpreendentes e uma história de fundo intrigante</p>
+                    <button class="votar-btn" data-personagem="anya">Votar</button>
+                    <div class="barra-votos" id="anya-barra"></div>
+                </li>
+                <li>
+                    <h3>Loid Forger</h3>
+                    <img src="./images/loid_forger_render_by_gio3kyt_dfh1uv9-414w-2x.png" alt="anya forger">
+                    <p>Loid Forger é o pseudônimo que o astuto espião, agente Twilight, usa em sua mais nova missão: a operação Strix</p>
+                    <button class="votar-btn" data-personagem="loid">Votar</button>
+                    <div class="barra-votos" id="loid-barra"></div>
+                </li>
+                <li>
+                    <h3>Anya Forger</h3>
+                    <img src="./images/yor_forger__no_background__by_minyboy5_df5eznc-fullview.png" alt="anya forger">
+                    <p>Yor é uma assassina extremamente mortal, eliminando facilmente guardas e terroristas armados com armas para chegar até seus "clientes",</p>
+                    <button class="votar-btn" data-personagem="yor">Votar</button>
+                    <div class="barra-votos" id="yor-barra"></div>
+                </li>
+
+            </ul>
+        </div>
+    </section>
+</div>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        $(document).ready(function () {
+    
+            // Inicialize contadores de votos
+            var votos = {
+                anya: parseInt(localStorage.getItem('anya')) || 0,
+                loid: parseInt(localStorage.getItem('loid')) || 0,
+                yor: parseInt(localStorage.getItem('yor')) || 0
+            };
+    
+            // Inicialize as barras de votos
+            atualizarBarras();
+    
+            $('#carrosel').slick({
+                autoplay: true,
+                autoplaySpeed: 1000,
+            });
+    
+            // Lógica de votação
+            $('.votar-btn').on('click', function () {
+                var personagem = $(this).data('personagem');
+                votos[personagem]++;
+                localStorage.setItem(personagem, votos[personagem]);
+                atualizarBarras();
+            });
+    
+            function atualizarBarras() {
+                for (var personagem in votos) {
+                    var barra = $('#' + personagem + '-barra');
+                    var porcentagem = (votos[personagem] / Object.values(votos).reduce((a, b) => a + b, 0)) * 100;
+                    barra.css('width', porcentagem + '%');
+                    barra.text(votos[personagem] + ' votos');
+                }
+            }
+    
+        });
+    </script>
+    
+</body>
+</html>

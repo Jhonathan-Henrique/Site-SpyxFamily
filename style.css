@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    background: rgb(198, 162, 147);
+}
+.container-geral {
+    height: ;
+    max-width: 2090px;
+    width: 100%;
+    margin: 0 auto;
+    background: lightsalmon;
+}
+
+.container {
+    max-width: 1020px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background: lightsalmon;
+    color: #fff;
+    padding-top: 16px; 
+}
+
+header > .container {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 16px;
+}
+
+ nav {
+    padding: 16px;
+}
+
+nav li{
+    display: inline;
+    list-style: none;
+    margin-right: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+nav li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu-hamburguer {
+    width: 42px;
+}
+
+.menu-hamburguer span {
+    background: #fff;
+    height: 2px;
+    width: 100%;
+    display: block;
+    margin-bottom: 4px;
+}
+
+#carrosel img {
+    max-width: 100%;
+    height: 700px;
+    object-fit: cover;
+}
+
+section {
+    background: rgb(102, 198, 210);
+}
+
+h2 {
+    text-align: center;
+    background: #fff;
+    font-size: 30px;
+    padding: 16px 0;
+}
+
+section ul {
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+section ul li {
+    background: lightsalmon;
+    border: 1px solid black;
+    border-radius: 20px;
+    list-style: none;
+    margin: 5px 5px;
+}
+
+section ul li img {
+    
+    height: 400px;
+}
+
+section p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+section button {
+    padding: 20px;
+    width: 90%;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.barra-votos {
+    height: 20px;
+    background-color: green; /* Cor de fundo da barra de votos */
+    color: white; /* Cor do texto (número de votos) na barra de votos */
+    text-align: center;
+    line-height: 20px;
+    margin-top: 5px; /* Espaçamento superior */
+    border-radius: 5px;
+}
