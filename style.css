@@ -11,8 +11,7 @@ body {
     background: rgb(198, 162, 147);
 }
 .container-geral {
-    height: ;
-    max-width: 2090px;
+    max-width: 1490px;
     width: 100%;
     margin: 0 auto;
     background: lightsalmon;
@@ -127,4 +126,15 @@ section button {
     line-height: 20px;
     margin-top: 5px; /* Espaçamento superior */
     border-radius: 5px;
+}
+
+@media  (max-width: 600px) {
+    #carrosel img {
+        height: 200px;
+    }
+
+ ul {
+    display: flex;
+    flex-direction: column;
+ }
 }
